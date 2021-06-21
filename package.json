@@ -13,11 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "netlify-cms-app": "^2.15.19",
     "next": "^11.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "add": "^2.0.6",
     "frontmatter-markdown-loader": "^3.6.2"
   }
 }
