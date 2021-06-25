@@ -25,13 +25,14 @@ const About = () => {
                                     First Name
                                     <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
                                 </label> */}
-                                <label>Your Name: <input type="text" name="name" className="form-control"  /></label>   
+                                <label>Your Name: </label>
+                                <input type="text" name="name" className="form-control" />
                                 
                             </div>
                             <div className="form-group">
                                 <label>
                                     Last Name
-                                    <input type="text" className="form-control" id="lastName" placeholder="Enter your last name..." />
+                                    <input type="text" className="form-control" id="lastName" />
                                 </label>
                             </div>
                             {/* <div className="form-group">
@@ -42,7 +43,7 @@ const About = () => {
                             <div className="form-group">
                                 <label htmlFor="message">Check me out</label>
                                 
-                                <textarea className="form-control" id="message" placeholder="Send us a message..."></textarea>
+                                <textarea className="form-control" id="message"></textarea>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
