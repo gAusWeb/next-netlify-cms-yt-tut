@@ -13,6 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-react": "^7.14.5",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/mdx": "^1.6.22",
+    "@next/mdx": "^11.0.1",
     "netlify-cms-app": "^2.15.19",
     "next": "^11.0.0",
     "react": "^17.0.2",
