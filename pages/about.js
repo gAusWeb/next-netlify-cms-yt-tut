@@ -19,7 +19,7 @@ const About = () => {
 
 
                         <form name="contact" method="POST" data-netlify="true">
-                            <input type="hidden" name="form-name" value="contact" />
+                            <input type="hidden" name="contact" value="contact" />
                             <div className="form-group">
                                 <label htmlFor="firstName">First Name</label>
                                 <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
@@ -34,7 +34,8 @@ const About = () => {
                                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div> */}
                             <div className="form-group">
-                                <label className="form-check-label" htmlFor="message">Check me out</label>
+                                <label htmlFor="message">Check me out</label>
+                                
                                 <textarea className="form-control" id="message" placeholder="Send us a message..."></textarea>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
