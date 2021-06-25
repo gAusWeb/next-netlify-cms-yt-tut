@@ -17,16 +17,21 @@ const About = () => {
                         <h1>About</h1>
                         <hr></hr>
 
-
+                        
                         <form name="about" method="post" data-netlify="true">
                             <input type="hidden" name="form-name" value="about" />
                             <div className="form-group">
-                                <label htmlFor="firstName">First Name</label>
-                                <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
+                                <label htmlFor="firstName">
+                                    First Name
+                                    <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
+                                </label>
+                                
                             </div>
                             <div className="form-group">
-                                <label htmlFor="lastName">Last Name</label>
-                                <input type="text" className="form-control" id="lastName" placeholder="Enter your last name..." />
+                                <label>
+                                    Last Name
+                                    <input type="text" className="form-control" id="lastName" placeholder="Enter your last name..." />
+                                </label>
                             </div>
                             {/* <div className="form-group">
                                 <label htmlFor="exampleInputEmail1">Email address</label>
@@ -39,7 +44,6 @@ const About = () => {
                                 <textarea className="form-control" id="message" placeholder="Send us a message..."></textarea>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
-                            <hr></hr>
                         </form>
                     </div> 
                 </div> 
