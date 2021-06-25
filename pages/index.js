@@ -18,13 +18,6 @@ const Home = () => {
 
                         <HomeContent />
 
-                        <div>
-                            <img src="https://picsum.photos/2500/600" className="img-fluid" alt="Responsive image" />
-                        </div>
-                        
-                        <div>
-                            <img src="https://picsum.photos/2500/600" className="img-fluid" alt="Responsive image" />
-                        </div>
                     </div> 
                 </div> 
             </div> 
