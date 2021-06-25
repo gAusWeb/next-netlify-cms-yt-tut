@@ -15,7 +15,7 @@ const About = () => {
                         <p><a href="./contact" title="Click to to go to home page">Contact</a></p>
                         <hr></hr>
                         <h1>Contact</h1>
-                        <form name="contact" method="POST" data-netlify="true">
+                        <form name="contact" method="post" data-netlify="true">
                             <input type="hidden" name="form-name" value="contact" />
                             <p>
                                 <label>Your Name: <input type="text" name="name" /></label>   

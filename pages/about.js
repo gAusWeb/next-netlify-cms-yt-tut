@@ -18,8 +18,8 @@ const About = () => {
                         <hr></hr>
 
 
-                        <form name="contact" method="POST" data-netlify="true">
-                            <input type="hidden" name="form-name" value="contact" />
+                        <form name="about" method="post" data-netlify="true">
+                            <input type="hidden" name="form-name" value="about" />
                             <div className="form-group">
                                 <label htmlFor="firstName">First Name</label>
                                 <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
