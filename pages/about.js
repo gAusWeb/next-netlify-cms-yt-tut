@@ -21,19 +21,12 @@ const About = () => {
                         <form name="about" method="post" data-netlify="true">
                             <input type="hidden" name="form-name" value="about" />
                             <div className="form-group">
-                                {/* <label htmlFor="firstName">
-                                    First Name
-                                    <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
-                                </label> */}
-                                <label>Your Name: </label>
-                                <input type="text" name="name" className="form-control" />
-                                
+                                <label htmlFor="firstName">First Name</label>
+                                <input type="text" name="first_name" className="form-control" id="firstName" placeholder="Enter your first name..." />
                             </div>
                             <div className="form-group">
-                                <label>
-                                    Last Name
-                                    <input type="text" className="form-control" id="lastName" />
-                                </label>
+                                <label htmlFor="lastName">Last Name</label>
+                                <input type="text" name="last_name"  className="form-control" id="lastName" placeholder="Enter your last name..." />
                             </div>
                             {/* <div className="form-group">
                                 <label htmlFor="exampleInputEmail1">Email address</label>
@@ -41,9 +34,9 @@ const About = () => {
                                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div> */}
                             <div className="form-group">
-                                <label>Check me out</label>
+                                <label htmlFor="message">Check me out</label>
                                 
-                                <textarea className="form-control"></textarea>
+                                <textarea className="form-control" name="message" id="message" placeholder="Send us a message..."></textarea>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
