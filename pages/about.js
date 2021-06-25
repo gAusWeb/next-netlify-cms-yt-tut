@@ -20,17 +20,21 @@ const About = () => {
 
                         <form name="contact" method="POST" data-netlify="true">
                             <div className="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <label for="firstName">First Name</label>
+                                <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
                             </div>
                             <div className="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                <label for="lastName">Last Name</label>
+                                <input type="text" className="form-control" id="lastName" placeholder="Enter your last name..." />
                             </div>
-                            <div className="form-group form-check">
-                                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                <label className="form-check-label" for="exampleCheck1">Check me out</label>
+                            {/* <div className="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Enter name" />
+                                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div> */}
+                            <div className="form-group">
+                                <label className="form-check-label" for="message">Check me out</label>
+                                <textarea className="form-control" id="message" placeholder="Send us a message..."></textarea>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                             </form>
