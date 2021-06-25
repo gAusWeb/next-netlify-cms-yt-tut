@@ -21,10 +21,11 @@ const About = () => {
                         <form name="about" method="post" data-netlify="true">
                             <input type="hidden" name="form-name" value="about" />
                             <div className="form-group">
-                                <label htmlFor="firstName">
+                                {/* <label htmlFor="firstName">
                                     First Name
                                     <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
-                                </label>
+                                </label> */}
+                                <label>Your Name: <input type="text" name="name" /></label>   
                                 
                             </div>
                             <div className="form-group">
