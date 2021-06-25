@@ -1,5 +1,5 @@
-// import { Component } from 'react'
 import { attributes, react as HomeContent } from '../content/home.md';
+import Navigation from "./partials/Navigation";
 
 const Home = () => {
 
@@ -7,17 +7,16 @@ const Home = () => {
 
     return (
         <>
+            <Navigation />
+
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <p><a href="./" title="Click to to go to home page">Home</a></p>
-                        <p><a href="./about" title="Click to to go to home page">About</a></p>
-                        <p><a href="./contact" title="Click to to go to home page">Contact</a></p>
-                        <hr></hr>
+                        
                         <h1>{title}</h1>
                         <span>{date}</span>
+
                         <HomeContent />
-                        
 
                         <div>
                             <img src="https://picsum.photos/2500/600" className="img-fluid" alt="Responsive image" />

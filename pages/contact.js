@@ -1,20 +1,23 @@
-// import { Component } from 'react'
-// import { attributes, react as HomeContent } from '../content/home.md';
+import { attributes, react as ContactContent } from '../content/contact.md';
+import Navigation from "./partials/Navigation";
 
 const About = () => {
 
-    // let { title, date } = attributes;
+    let { title, date } = attributes;
 
     return (
         <>
-        <div className="container">
+            <Navigation />
+
+            <div className="container">
                 <div className="row">
                     <div className="col">
-                        <p><a href="./" title="Click to to go to home page">Home</a></p>
-                        <p><a href="./about" title="Click to to go to home page">About</a></p>
-                        <p><a href="./contact" title="Click to to go to home page">Contact</a></p>
+
+                        <h1>{title}</h1>
+                        <span>{date}</span>
+
                         <hr></hr>
-                        <h1>Contact</h1>
+                        
                         <form name="contact" method="post" data-netlify="true">
                             <input type="hidden" name="form-name" value="contact" />
                             <p>
@@ -36,6 +39,8 @@ const About = () => {
                                 <button type="submit">Send</button>
                             </p>
                         </form>
+
+                        <ContactContent />
 
                     </div> 
                 </div> 
