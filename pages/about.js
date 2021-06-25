@@ -25,7 +25,7 @@ const About = () => {
                                     First Name
                                     <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
                                 </label> */}
-                                <label>Your Name: <input type="text" name="name" /></label>   
+                                <label>Your Name: <input type="text" name="name" className="form-control"  /></label>   
                                 
                             </div>
                             <div className="form-group">
