@@ -19,7 +19,7 @@ const About = () => {
 
 
                         <form name="contact" method="POST" data-netlify="true">
-                            <input type="hidden" name="contact" value="contact" />
+                            <input type="hidden" name="form-name" value="contact" />
                             <div className="form-group">
                                 <label htmlFor="firstName">First Name</label>
                                 <input type="text" className="form-control" id="firstName" placeholder="Enter your first name..." />
@@ -39,6 +39,7 @@ const About = () => {
                                 <textarea className="form-control" id="message" placeholder="Send us a message..."></textarea>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
+                            <hr></hr>
                         </form>
                     </div> 
                 </div> 

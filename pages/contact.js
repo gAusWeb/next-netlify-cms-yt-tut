@@ -15,13 +15,26 @@ const About = () => {
                         <p><a href="./contact" title="Click to to go to home page">Contact</a></p>
                         <hr></hr>
                         <h1>Contact</h1>
-                        <div>
-                            <img src="https://picsum.photos/2500/600" className="img-fluid" alt="Responsive image"/>
-                        </div>
-                        
-                        <div>
-                            <img src="https://picsum.photos/2500/600" className="img-fluid" alt="Responsive image"/>
-                        </div>
+                        <form name="contact" method="POST" data-netlify="true">
+                            <p>
+                                <label>Your Name: <input type="text" name="name" /></label>   
+                            </p>
+                            <p>
+                                <label>Your Email: <input type="email" name="email" /></label>
+                            </p>
+                            <p>
+                                <label>Your Role: <select name="role[]" multiple>
+                                <option value="leader">Leader</option>
+                                <option value="follower">Follower</option>
+                                </select></label>
+                            </p>
+                            <p>
+                                <label>Message: <textarea name="message"></textarea></label>
+                            </p>
+                            <p>
+                                <button type="submit">Send</button>
+                            </p>
+                        </form>
 
                     </div> 
                 </div> 
