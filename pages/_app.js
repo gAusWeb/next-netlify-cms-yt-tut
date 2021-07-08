@@ -1,7 +1,12 @@
-
+import Layout from "../components/Layout"
 import "../fed/scss/quick-image-reset.css"
 import "../fed/scss/bootstrap-v4-4-1.css"
+
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }

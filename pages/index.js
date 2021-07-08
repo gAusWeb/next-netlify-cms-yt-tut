@@ -1,5 +1,11 @@
+import Head from 'next/head'
 import { attributes, react as HomeContent } from '../content/home.md';
-import Navigation from "./partials/Navigation";
+import dynamic from 'next/dynamic'
+
+const DynamicComponentWithNoSSR = dynamic(
+    () => import('../components/hello'),
+    { ssr: false }
+  )
 
 const Home = () => {
 
@@ -7,7 +13,10 @@ const Home = () => {
 
     return (
         <>
-            <Navigation />
+            <Head>
+                <title>NextJs/Netlify Integration Demo</title>
+                <meta name="keywords" content="nextjs, netlify, netlifycms" />
+            </Head>
 
             <div className="container">
                 <div className="row">
@@ -15,9 +24,10 @@ const Home = () => {
                         
                         <h1>{title}</h1>
                         <span>{date}</span>
-
+                        <hr />
+                        <DynamicComponentWithNoSSR />
                         <HomeContent />
-
+                        <div id="search"></div>
                     </div> 
                 </div> 
             </div> 

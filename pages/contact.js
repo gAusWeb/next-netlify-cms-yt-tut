@@ -1,5 +1,5 @@
 import { attributes, react as ContactContent } from '../content/contact.md';
-import Navigation from "./partials/Navigation";
+import Slider from '../components/Slider';
 
 const About = () => {
 
@@ -7,7 +7,7 @@ const About = () => {
 
     return (
         <>
-            <Navigation />
+                        {/* <Slider /> */}
 
             <div className="container">
                 <div className="row">
@@ -17,6 +17,7 @@ const About = () => {
                         <span>{date}</span>
 
                         <hr></hr>
+
                         
                         <form name="contact" method="post" data-netlify="true">
                             <input type="hidden" name="form-name" value="contact" />
@@ -28,8 +29,8 @@ const About = () => {
                             </p>
                             <p>
                                 <label>Your Role: <select name="role[]" multiple>
-                                <option value="leader">Leader</option>
-                                <option value="follower">Follower</option>
+                                <option value="dev">Dev</option>
+                                <option value="pencil-pusher">Pencil-pusher</option>
                                 </select></label>
                             </p>
                             <p>

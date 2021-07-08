@@ -1,5 +1,4 @@
 import { attributes, react as AboutContent } from '../content/about.md';
-import Navigation from "./partials/Navigation";
 
 const About = () => {
 
@@ -7,7 +6,6 @@ const About = () => {
 
     return (
         <>
-            <Navigation />
 
             <div className="container">
                 <div className="row">
