@@ -11,4 +11,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.imagesource.com%2Fwp-content%2Fuploads%2F2019%2F06%2FRio.jpg&f=1&nofb=1)
 
-![](img/huawei-lev-tec.jpg)
+![](img/sea-turtle.jpg)
