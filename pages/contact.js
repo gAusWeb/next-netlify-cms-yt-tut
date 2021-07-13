@@ -1,5 +1,5 @@
 import { attributes, react as ContactContent } from '../content/contact.md';
-import Slider from '../components/Slider';
+// import Slider from '../components/Slider';
 
 const About = () => {
 

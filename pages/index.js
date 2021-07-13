@@ -4,9 +4,9 @@ import { attributes, react as HomeContent } from "../content/home.md";
 import dynamic from "next/dynamic";
 import $ from "jquery";
 
-const DynamicComponentWithNoSSR = dynamic(() => import("../components/hello"), {
-    ssr: false,
-});
+// const DynamicComponentWithNoSSR = dynamic(() => import("../components/hello"), {
+//     ssr: false,
+// });
 
 const Home = () => {
     let { title, date } = attributes;
@@ -29,7 +29,7 @@ const Home = () => {
                         <h1>{title}</h1>
                         <span>{date}</span>
                         <hr />
-                        <DynamicComponentWithNoSSR />
+                        {/* <DynamicComponentWithNoSSR /> */}
                         <HomeContent />
                         <div id="search"></div>
                     </div>
