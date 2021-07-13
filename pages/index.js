@@ -1,15 +1,20 @@
-import Head from 'next/head'
-import { attributes, react as HomeContent } from '../content/home.md';
-import dynamic from 'next/dynamic'
+import Head from "next/head";
+import { useEffect } from "react";
+import { attributes, react as HomeContent } from "../content/home.md";
+import dynamic from "next/dynamic";
+import $ from "jquery";
 
-const DynamicComponentWithNoSSR = dynamic(
-    () => import('../components/hello'),
-    { ssr: false }
-  )
+const DynamicComponentWithNoSSR = dynamic(() => import("../components/hello"), {
+    ssr: false,
+});
 
 const Home = () => {
-
     let { title, date } = attributes;
+
+    useEffect(() => {
+        const searchDiv = $("#search");
+        searchDiv.css("border", "1px solid red");
+    }, []);
 
     return (
         <>
@@ -21,19 +26,17 @@ const Home = () => {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        
                         <h1>{title}</h1>
                         <span>{date}</span>
                         <hr />
                         <DynamicComponentWithNoSSR />
                         <HomeContent />
                         <div id="search"></div>
-                    </div> 
-                </div> 
-            </div> 
-            
+                    </div>
+                </div>
+            </div>
         </>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
