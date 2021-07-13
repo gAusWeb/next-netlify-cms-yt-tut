@@ -15,6 +15,14 @@ const Home = () => {
     useEffect(() => {
         const searchDiv = $("#search");
         searchDiv.css("border", "1px solid red");
+
+
+        document.getElementById('myForm').addEventListener('submit', async event => {
+            event.preventDefault()
+            
+            const result = await fetch(`/.netlify/functions/searchIndex?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
+            document.getElementById('result').innerText = JSON.stringify(result, null, 2)
+          })
     }, []);
 
     return (
@@ -32,7 +40,12 @@ const Home = () => {
                         <hr />
                         {/* <DynamicComponentWithNoSSR /> */}
                         <HomeContent />
-                        <div id="search"></div>
+                        <form id="myForm">
+                            <div className="search-wrap">
+                                <input className="search-input" name="searchText" placeholder="Search for tech articles (eg. Animal crossing)" />
+                            </div>
+                            <div><button className="button">submit</button></div>
+                        </form>
                     </div>
                 </div>
             </div>
