@@ -19,8 +19,8 @@ const Home = () => {
 
         document.getElementById('myForm').addEventListener('submit', async event => {
             event.preventDefault()
-            
-            const result = await fetch(`/.netlify/functions/searchIndex?search=${event.target.searchText.value}&limit=25`)
+            // https://gees-first-next-netlify-site.netlify.app/search/searchIndex.json
+            const result = await fetch(`/search/searchIndex?search=${event.target.searchText.value}&limit=25`)
                 .then((x) => {
                     console.log('x', x);
                     console.log('x.JSON', x.JSON);
