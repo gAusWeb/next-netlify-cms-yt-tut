@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { attributes, react as HomeContent } from "../content/home.md";
 import dynamic from "next/dynamic";
 import $ from "jquery";
+// import searchIndex from './searchIndex.json'
 
 // const DynamicComponentWithNoSSR = dynamic(() => import("../components/hello"), {
 //     ssr: false,
