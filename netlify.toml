@@ -5,4 +5,9 @@
   [plugins.inputs]
     generatedFunctionName = 'null'
     publishDirJSONFileName = './search/searchIndex' # you can use / to nest in a directory
-    exclude = ['/404.html', '''\/page\/''']
+    exclude = [
+      '/404.html', 
+      '''\/page\/''',
+      '/admin/index.html',
+      '/partials/Navigation.html'
+    ]
