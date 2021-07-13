@@ -20,11 +20,9 @@ const Home = () => {
         document.getElementById('myForm').addEventListener('submit', async event => {
             event.preventDefault()
             // https://gees-first-next-netlify-site.netlify.app/search/searchIndex.json
-            const result = await fetch(`/search/searchIndex?search=${event.target.searchText.value}&limit=25`)
+            const result = await fetch(`/search/searchIndex.json?search=${event.target.searchText.value}&limit=25`)
                 .then((x) => {
-                    console.log('x', x);
-                    console.log('x.JSON', x.JSON);
-                    x.json()
+                    return x.json()
                 })
             document.getElementById('result').innerText = JSON.stringify(result, null, 2)
           })
@@ -40,19 +38,25 @@ const Home = () => {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h1>{title}</h1>
-                        <span>{date}</span>
-                        <hr />
-                        {/* <DynamicComponentWithNoSSR /> */}
-                        <HomeContent />
                         <form id="myForm">
                             <div className="search-wrap">
                                 <input className="search-input" name="searchText" placeholder="Search for tech articles (eg. Animal crossing)" />
                             </div>
                             <div><button className="button">submit</button></div>
                         </form>
+
                         <br />
+
                         <div id="result"></div>
+
+                        <br />
+
+                        <h1>{title}</h1>
+                        <span>{date}</span>
+                        <hr />
+                        {/* <DynamicComponentWithNoSSR /> */}
+                        <HomeContent />
+                        
                     </div>
                 </div>
             </div>
