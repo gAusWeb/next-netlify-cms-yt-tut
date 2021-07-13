@@ -20,7 +20,12 @@ const Home = () => {
         document.getElementById('myForm').addEventListener('submit', async event => {
             event.preventDefault()
             
-            const result = await fetch(`/.netlify/functions/searchIndex?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
+            const result = await fetch(`/.netlify/functions/searchIndex?search=${event.target.searchText.value}&limit=25`)
+                .then((x) => {
+                    console.log('x', x);
+                    console.log('x.JSON', x.JSON);
+                    x.json()
+                })
             document.getElementById('result').innerText = JSON.stringify(result, null, 2)
           })
     }, []);
@@ -46,6 +51,8 @@ const Home = () => {
                             </div>
                             <div><button className="button">submit</button></div>
                         </form>
+                        <br />
+                        <div id="result"></div>
                     </div>
                 </div>
             </div>
