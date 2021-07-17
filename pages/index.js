@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { attributes, react as HomeContent } from "../content/home.md";
 import dynamic from "next/dynamic";
 import $ from "jquery";
+import axios from "axios";
 // import searchIndex from './searchIndex.json'
 
 // const DynamicComponentWithNoSSR = dynamic(() => import("../components/hello"), {
@@ -11,6 +12,11 @@ import $ from "jquery";
 
 const Home = () => {
     let { title, date } = attributes;
+
+    const fetchData = async () => {
+        const results = await axios.get(`/.netlify/functions/mySearchFunction`);
+        console.log(results);
+    }
 
     useEffect(() => {
         const searchDiv = $("#search");
@@ -28,14 +34,14 @@ const Home = () => {
             // do get a response from this:
             // https://gees-first-next-netlify-site.netlify.app/.netlify/functions/mySearchFunction?
 
-            console.log(`test => ${event.target.searchText.value}`);
+            // console.log(`test => ${event.target.searchText.value}`);
             
-            const result = await fetch(`/.netlify/functions/mySearchFunction?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
-            document.getElementById('result').innerText = JSON.stringify(result, null, 2)
+            // const result = await fetch(`/.netlify/functions/mySearchFunction?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
+            // document.getElementById('result').innerText = JSON.stringify(result, null, 2)
 
 
             // let url = 'https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction'
-
+            fetchData()
 
           })
     }, []);

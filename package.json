@@ -19,6 +19,7 @@
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/mdx": "^1.6.22",
     "@next/mdx": "^11.0.1",
+    "axios": "^0.21.1",
     "babel-core": "^6.26.3",
     "babel-register": "^6.26.0",
     "flickity": "^2.2.2",
