@@ -26,9 +26,6 @@ const Home = () => {
             // https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction?search=
             
             const result = await fetch(`/.netlify/functions/searchIndex?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
-                .then((x) => {
-                    return x.json()
-                })
             document.getElementById('result').innerText = JSON.stringify(result, null, 2)
           })
     }, []);
