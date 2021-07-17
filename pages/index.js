@@ -13,10 +13,10 @@ import axios from "axios";
 const Home = () => {
     let { title, date } = attributes;
 
-    const fetchData = async () => {
-        const results = await axios.get(`/.netlify/functions/mySearchFunction`);
-        console.log(results);
-    }
+    // const fetchData = async () => {
+    //     const results = await axios.get(`/.netlify/functions/mySearchFunction`);
+    //     console.log(results);
+    // }
 
     useEffect(() => {
         const searchDiv = $("#search");
@@ -41,7 +41,9 @@ const Home = () => {
 
 
             // let url = 'https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction'
-            fetchData()
+
+            const results = await axios.get(`/.netlify/functions/mySearchFunction${event.target.searchText.value}&limit=25`);
+            document.getElementById('result').innerText = JSON.stringify(result, null, 2)
 
           })
     }, []);
