@@ -3,8 +3,10 @@
 [[plugins]]
   package = 'netlify-plugin-search-index'
   [plugins.inputs]
-    generatedFunctionName = 'null'
-    publishDirJSONFileName = './search/searchIndex' # you can use / to nest in a directory
+    # generatedFunctionName = 'null'
+    # publishDirJSONFileName = './search/searchIndex' # you can use / to nest in a directory
+    generatedFunctionName = 'mySearchFunction'
+    publishDirJSONFileName = 'null'
     exclude = [
       '/404.html', 
       '''\/page\/''',

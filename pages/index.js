@@ -20,7 +20,12 @@ const Home = () => {
         document.getElementById('myForm').addEventListener('submit', async event => {
             event.preventDefault()
             // https://gees-first-next-netlify-site.netlify.app/search/searchIndex.json
-            const result = await fetch(`/search/searchIndex.json?search=${event.target.searchText.value}&limit=25`)
+            // https://yoursite.netlify.com/.netlify/functions/mySearchFunction?search=foo
+            // const result = await fetch(`/search/searchIndex.json?search=${event.target.searchText.value}&limit=25`)
+            // .netlify.com/.netlify/functions/mySearchFunction?search=
+            // https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction?search=
+            
+            const result = await fetch(`/.netlify/functions/searchIndex?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
                 .then((x) => {
                     return x.json()
                 })
