@@ -1,10 +1,10 @@
 import Head from "next/head";
 import { useEffect } from "react";
 import { attributes, react as HomeContent } from "../content/home.md";
-import dynamic from "next/dynamic";
-import $ from "jquery";
-import axios from "axios";
-// import searchIndex from './searchIndex.json'
+// import dynamic from "next/dynamic";
+// import $ from "jquery";
+// import axios from "axios";
+// import searchIndex from '../public/search/searchIndex.json'
 
 // const DynamicComponentWithNoSSR = dynamic(() => import("../components/hello"), {
 //     ssr: false,
@@ -19,8 +19,8 @@ const Home = () => {
     // }
 
     useEffect(() => {
-        const searchDiv = $("#search");
-        searchDiv.css("border", "1px solid red");
+        // const searchDiv = $("#search");
+        // searchDiv.css("border", "1px solid red");
 
 
         document.getElementById('myForm').addEventListener('submit', async event => {
@@ -36,14 +36,16 @@ const Home = () => {
 
             // console.log(`test => ${event.target.searchText.value}`);
             
-            // const result = await fetch(`/.netlify/functions/mySearchFunction?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
-            // document.getElementById('result').innerText = JSON.stringify(result, null, 2)
+            const result = await fetch(`/.netlify/functions/mySearchFunction?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
+            document.getElementById('result').innerText = JSON.stringify(result, null, 2)
 
 
             // let url = 'https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction'
 
-            const results = await axios.get(`/.netlify/functions/mySearchFunction${event.target.searchText.value}&limit=25`);
-            document.getElementById('result').innerText = JSON.stringify(results, null, 2)
+            // const results = await axios.get(`../public/search/searchIndex.json`);
+            // document.getElementById('result').innerText = JSON.stringify(results, null, 2)
+
+            // console.log('searchIndex', searchIndex)
 
           })
     }, []);
