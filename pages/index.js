@@ -22,32 +22,37 @@ const Home = () => {
         // const searchDiv = $("#search");
         // searchDiv.css("border", "1px solid red");
 
+        document
+            .getElementById("myForm")
+            .addEventListener("submit", async (event) => {
+                event.preventDefault();
+                // https://gees-first-next-netlify-site.netlify.app/search/searchIndex.json
+                // https://yoursite.netlify.com/.netlify/functions/mySearchFunction?search=foo
+                // const result = await fetch(`/search/searchIndex.json?search=${event.target.searchText.value}&limit=25`)
+                // .netlify.com/.netlify/functions/mySearchFunction?search=
+                // https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction?search=
 
-        document.getElementById('myForm').addEventListener('submit', async event => {
-            event.preventDefault()
-            // https://gees-first-next-netlify-site.netlify.app/search/searchIndex.json
-            // https://yoursite.netlify.com/.netlify/functions/mySearchFunction?search=foo
-            // const result = await fetch(`/search/searchIndex.json?search=${event.target.searchText.value}&limit=25`)
-            // .netlify.com/.netlify/functions/mySearchFunction?search=
-            // https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction?search=
+                // do get a response from this:
+                // https://gees-first-next-netlify-site.netlify.app/.netlify/functions/mySearchFunction?
 
-            // do get a response from this:
-            // https://gees-first-next-netlify-site.netlify.app/.netlify/functions/mySearchFunction?
+                // console.log(`test => ${event.target.searchText.value}`);
 
-            // console.log(`test => ${event.target.searchText.value}`);
-            
-            const result = await fetch(`/.netlify/functions/mySearchFunction?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
-            document.getElementById('result').innerText = JSON.stringify(result, null, 2)
+                const result = await fetch(
+                    `/.netlify/functions/mySearchFunction?search=${event.target.searchText.value}&limit=25`
+                ).then((x) => x.json());
+                document.getElementById("result").innerText = JSON.stringify(
+                    result,
+                    null,
+                    2
+                );
 
+                // let url = 'https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction'
 
-            // let url = 'https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction'
+                // const results = await axios.get(`../public/search/searchIndex.json`);
+                // document.getElementById('result').innerText = JSON.stringify(results, null, 2)
 
-            // const results = await axios.get(`../public/search/searchIndex.json`);
-            // document.getElementById('result').innerText = JSON.stringify(results, null, 2)
-
-            // console.log('searchIndex', searchIndex)
-
-          })
+                // console.log('searchIndex', searchIndex)
+            });
     }, []);
 
     return (
@@ -57,14 +62,45 @@ const Home = () => {
                 <meta name="keywords" content="nextjs, netlify, netlifycms" />
             </Head>
 
+            <section
+                style={{
+                    backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/freedom.jpg)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    height: '800px',
+                }}
+            ></section>
+            {/* <section
+                style={{
+                    backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/travel.jpg)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    height: '400px',
+                }}
+            ></section>
+            <section
+                style={{
+                    backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/holidays.jpg)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    height: '400px',
+                }}
+            ></section> */}
+
             <div className="container">
                 <div className="row">
                     <div className="col">
                         <form id="myForm">
                             <div className="search-wrap">
-                                <input className="search-input" name="searchText" placeholder="Search for tech articles (eg. Animal crossing)" />
+                                <input
+                                    className="search-input"
+                                    name="searchText"
+                                    placeholder="Search for tech articles (eg. Animal crossing)"
+                                />
                             </div>
-                            <div><button className="button">submit</button></div>
+                            <div>
+                                <button className="button">submit</button>
+                            </div>
                         </form>
 
                         <br />
@@ -78,7 +114,6 @@ const Home = () => {
                         <hr />
                         {/* <DynamicComponentWithNoSSR /> */}
                         <HomeContent />
-                        
                     </div>
                 </div>
             </div>
