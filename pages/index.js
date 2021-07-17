@@ -24,9 +24,19 @@ const Home = () => {
             // const result = await fetch(`/search/searchIndex.json?search=${event.target.searchText.value}&limit=25`)
             // .netlify.com/.netlify/functions/mySearchFunction?search=
             // https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction?search=
+
+            // do get a response from this:
+            // https://gees-first-next-netlify-site.netlify.app/.netlify/functions/mySearchFunction?
+
+            console.log(`test => ${event.target.searchText.value}`);
             
-            const result = await fetch(`/.netlify/functions/searchIndex?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
+            const result = await fetch(`/.netlify/functions/mySearchFunction?search=${event.target.searchText.value}&limit=25`).then(x => x.json())
             document.getElementById('result').innerText = JSON.stringify(result, null, 2)
+
+
+            // let url = 'https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction'
+
+
           })
     }, []);
 
