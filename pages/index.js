@@ -43,7 +43,7 @@ const Home = () => {
             // let url = 'https://gees-first-next-netlify-site.netlify.com/.netlify/functions/mySearchFunction'
 
             const results = await axios.get(`/.netlify/functions/mySearchFunction${event.target.searchText.value}&limit=25`);
-            document.getElementById('result').innerText = JSON.stringify(result, null, 2)
+            document.getElementById('result').innerText = JSON.stringify(results, null, 2)
 
           })
     }, []);
