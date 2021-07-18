@@ -1,40 +1,26 @@
-// import StickHeader from "./StickyHeader";
-import Lottie from "react-lottie";
-// import dynamic from "next/dynamic";
-// import * as animationData from "https://assets10.lottiefiles.com/datafiles/9gIwZ2uiiKglyb0/data";
-import * as animationData from '../../fed/data/lottie-menu.json'
-import { useState, useEffect } from "react";
-
-// const Lottie-Player = dynamic(
-//     () => {
-//         return import("@lottiefiles/lottie-player");
-//     },
-//     { ssr: false }
-// );
+import lottie from "lottie-web";
+import * as animationData from "../../fed/data/lottie-menu.json";
+import { useEffect } from "react";
 
 export default function Navigation() {
-    const defaultOptions = {
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
-
-    const [isStopped, setIsStopped] = useState(true);
-
     useEffect(() => {
+        lottie.loadAnimation({
+            container: document.querySelector(".lottie-wrapper"),
+            animationData,
+            loop: false,
+        });
+
         const body = document.body;
         const triggerMenu = document.querySelector(
             ".page-header .trigger-menu"
         );
-        const nav = document.querySelector(".page-header nav");
-        const menu = document.querySelector(".page-header .menu");
         const lottieWrapper = document.querySelector(".lottie-wrapper");
-        const lottiePlayer = document.querySelector("Lottie");
-        console.log(lottiePlayer);
         const scrollUp = "scroll-up";
         const scrollDown = "scroll-down";
         let lastScroll = 0;
+        // const nav = document.querySelector(".page-header nav");
+        // const menu = document.querySelector(".page-header .menu");
+        // const lottiePlayer = document.querySelector("Lottie");
 
         triggerMenu.addEventListener("click", () => {
             body.classList.toggle("menu-open");
@@ -53,25 +39,21 @@ export default function Navigation() {
                 return;
             }
 
-            if (
-                currentScroll > lastScroll &&
-                !body.classList.contains(scrollDown)
-            ) {
+            if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
                 // down
                 body.classList.remove(scrollUp);
                 body.classList.add(scrollDown);
-                // setIsStopped(!isStopped)
-            } else if (
-                currentScroll < lastScroll &&
-                body.classList.contains(scrollDown)
-            ) {
+                lottie.play();
+            } else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
                 // up
                 body.classList.remove(scrollDown);
                 body.classList.add(scrollUp);
-                // setIsStopped(!isStopped)
+                lottie.stop();
+                
             }
             lastScroll = currentScroll;
         });
+
     });
 
     return (
@@ -117,12 +99,6 @@ export default function Navigation() {
                 aria-label="Toggle menu"
                 className="lottie-wrapper"
             >
-                <Lottie
-                    options={defaultOptions}
-                    height={60}
-                    width={60}
-                    isStopped={isStopped}
-                ></Lottie>
             </a>
 
             {/* <main className="page-main">

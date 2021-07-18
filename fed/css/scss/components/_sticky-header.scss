@@ -24,6 +24,7 @@ header {
 
     ul {
         list-style: none;
+        margin-bottom: 0;
     }
 
     a {
@@ -98,6 +99,8 @@ body {
     z-index: 1;
     padding: 5px;
     border-radius: 5px;
+    height: 70px;
+    width: 70px;
 }
 
 .page-main section {
