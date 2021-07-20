@@ -21,7 +21,6 @@ export default function Navigation() {
         let lastScroll = 0;
         // const nav = document.querySelector(".page-header nav");
         // const menu = document.querySelector(".page-header .menu");
-        // const lottiePlayer = document.querySelector("Lottie");
 
         triggerMenu.addEventListener("click", () => {
             body.classList.toggle("menu-open");
