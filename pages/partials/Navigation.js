@@ -8,6 +8,7 @@ export default function Navigation() {
             container: document.querySelector(".lottie-wrapper"),
             animationData,
             loop: false,
+            autoplay: false,
         });
 
         const body = document.body;
