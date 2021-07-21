@@ -148,18 +148,19 @@ const Home = (props) => {
                 }}
             ></section> */}
 
-            <div className="container">
-                <BlogList
-                    blogs={blogs}
-                    title="All Blogs"
-                    handleDelete={handleDelete}
-                />
+            <BlogList
+                blogs={blogs}
+                title="All Blogs"
+                handleDelete={handleDelete}
+            />
 
-                <BlogList
-                    blogs={blogs.filter((blog) => blog.author === "mario")}
-                    title="Mario's Blogs"
-                    handleDelete={handleDelete}
-                />
+            <BlogList
+                blogs={blogs.filter((blog) => blog.author === "mario")}
+                title="Mario's Blogs"
+                handleDelete={handleDelete}
+            />
+            
+            <div className="container">
                 <div className="row">
                     <div className="col">
                         <br />
