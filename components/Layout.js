@@ -1,4 +1,5 @@
-import Navigation from '../pages/partials/Navigation'
+import Footer from './Footer'
+import Navigation from './Navigation'
 
 
 const Layout = ({children}) => {
@@ -6,6 +7,7 @@ const Layout = ({children}) => {
         <div className="custom-site-wrapper">
             <Navigation />
             {children}
+            <Footer />
         </div>
     )
 }

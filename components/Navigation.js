@@ -1,6 +1,7 @@
 import lottie from "lottie-web";
-import * as animationData from "../../fed/data/lottie-menu.json";
+import * as animationData from "../data/lottie-menu.json";
 import { useEffect } from "react";
+import Link from 'next/link'
 
 export default function Navigation() {
     useEffect(() => {
@@ -70,10 +71,10 @@ export default function Navigation() {
                     </div>
                     <ul className="menu">
                         <li>
-                            <a href="/">Home</a>
+                            <Link href="/"><a>Home</a></Link>
                         </li>
                         <li>
-                            <a href="/about">About</a>
+                            <Link href="/about"><a>About</a></Link>
                             {/* <ul className="sub-menu">
                                 <li>
                                     <a href="">Team</a>
@@ -87,7 +88,10 @@ export default function Navigation() {
                             <a href="">Services</a>
                         </li> */}
                         <li>
-                            <a href="/contact">Contact</a>
+                          <Link href="/posts"><a>See Gee's Posts</a></Link>
+                        </li>
+                        <li>
+                          <Link href="/contact"><a>Contact</a></Link>
                         </li>
                     </ul>
                 </nav>

@@ -1,15 +1,18 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { attributes, react as HomeContent } from "../content/home.md";
-import { isEqual } from "lodash";
-import qs from "qs";
-import algoliasearch from "algoliasearch/lite";
-import { findResultsState } from "react-instantsearch-dom/server";
 import BlogList from "../components/BlogList";
+import useAxios from "../components/useAxios";
+import axios from "axios";
+import styles from '../fed/css/scss/page-specific/home.module.scss'
 
 // import dynamic from "next/dynamic";
 // import $ from "jquery";
-// import axios from "axios";
+// import { isEqual } from "lodash";
+// import qs from "qs";
+// import algoliasearch from "algoliasearch/lite";
+// import { findResultsState } from "react-instantsearch-dom/server";
+
 // import searchIndex from '../public/search/searchIndex.json'
 
 // const DynamicComponentWithNoSSR = dynamic(() => import("../components/hello"), {
@@ -35,22 +38,37 @@ import BlogList from "../components/BlogList";
 //     indexName: "instant_search",
 // };
 
+
+// run json-server without DL npm package to project
+// npx json-server --watch data/db.json --port 8000
+
+
+
+
 const Home = (props) => {
     let { title, date } = attributes;
-
     const [name, setName] = useState("mario");
-    const [searchState, setSearchState] = useState(props.searchState);
+    const {data: blogs, isLoading, error} = useAxios('http://localhost:8000/blogs')
+    
+    
+
+
+    // const [searchState, setSearchState] = useState(props.searchState);
+    
     // const [lastRouter, setLastRouter] = useState(props.searchState)
-    console.log(props);
+    // console.log(props);
 
     // const fetchData = async () => {
     //     const results = await axios.get(`/.netlify/functions/mySearchFunction`);
     //     console.log(results);
     // }
 
+    /*
     useEffect(() => {
         // const searchDiv = $("#search");
         // searchDiv.css("border", "1px solid red");
+
+        
 
         document
             .getElementById("myForm")
@@ -83,37 +101,35 @@ const Home = (props) => {
 
                 // console.log('searchIndex', searchIndex)
             });
-    }, []);
+
+           
+
+    }, [name]);
+    */
 
     const handleClick = () => {
         setName("guiseppe");
     };
 
-    const [blogs, setBlogs] = useState([
-        {
-            title: "My new website",
-            body: "lorem ipsum...",
-            author: "mario",
-            id: 1,
-        },
-        {
-            title: "Welcome party!",
-            body: "lorem ipsum...",
-            author: "yoshi",
-            id: 2,
-        },
-        {
-            title: "Web dev top tips",
-            body: "lorem ipsum...",
-            author: "mario",
-            id: 3,
-        },
-    ]);
+    
 
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter((blog) => blog.id !== id);
-        setBlogs(newBlogs);
-    };
+    // const handleDelete = (id) => {
+    //     const newBlogs = blogs.filter((blog) => blog.id !== id);
+    //     setBlogs(newBlogs);
+    // };
+    
+    const [ninjaData, setNinjaData] = useState(null)
+    const [ninjaDataLoaded, setNinjaDataLoaded] = useState(false)
+    
+
+    useEffect(() => {
+        axios.get('http://jsonplaceholder.typicode.com/users')
+            .then(resp => {
+                setNinjaData(resp.data);
+                setNinjaDataLoaded(true)
+            })
+            
+    },[])
 
     return (
         <>
@@ -121,7 +137,7 @@ const Home = (props) => {
                 <title>NextJs/Netlify Integration Demo</title>
                 <meta name="keywords" content="nextjs, netlify, netlifycms" />
             </Head>
-
+            
             <section
                 style={{
                     backgroundImage:
@@ -131,6 +147,22 @@ const Home = (props) => {
                     height: "800px",
                 }}
             ></section>
+
+            {/* {console.log(ninjaData)} */}
+            {/* {ninjaData.map(el => <p key={el.id}>{el.name}</p>)} */} 
+
+            {ninjaDataLoaded &&
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <ul className={styles.test_class}>
+                                {ninjaData.map(el => <li key={el.id}>{el.name}</li>)}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
             {/* <section
                 style={{
                     backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/travel.jpg)",
@@ -148,17 +180,48 @@ const Home = (props) => {
                 }}
             ></section> */}
 
-            <BlogList
+            {/* <div>
+                <h1>All Ninjs</h1>
+                {ninjaData.map(ninja => (
+                    <Link key={ninja.id}>
+                        <a>
+                            <h3>{ninja.name}</h3>
+                        </a>
+                    </Link>
+                ))}
+            </div> */}
+
+            
+
+            {error && 
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <div>{error}</div>
+                        </div>
+                    </div>
+                </div>
+            }
+             
+            {isLoading && 
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <div>loading...</div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            {blogs && <BlogList
                 blogs={blogs}
                 title="All Blogs"
-                handleDelete={handleDelete}
-            />
+            />}
 
-            <BlogList
+            {blogs && <BlogList
                 blogs={blogs.filter((blog) => blog.author === "mario")}
                 title="Mario's Blogs"
-                handleDelete={handleDelete}
-            />
+            />}
             
             <div className="container">
                 <div className="row">
