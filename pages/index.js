@@ -5,6 +5,8 @@ import BlogList from "../components/BlogList";
 import useAxios from "../components/useAxios";
 import axios from "axios";
 import styles from '../fed/css/scss/page-specific/home.module.scss'
+// import ImagesInNext from "../components/NextImages";
+// import Image from 'next/image'
 
 // import dynamic from "next/dynamic";
 // import $ from "jquery";
@@ -50,14 +52,9 @@ const Home = (props) => {
     const [name, setName] = useState("mario");
     const {data: blogs, isLoading, error} = useAxios('http://localhost:8000/blogs')
     
-    
-
-
     // const [searchState, setSearchState] = useState(props.searchState);
-    
     // const [lastRouter, setLastRouter] = useState(props.searchState)
     // console.log(props);
-
     // const fetchData = async () => {
     //     const results = await axios.get(`/.netlify/functions/mySearchFunction`);
     //     console.log(results);
@@ -67,9 +64,6 @@ const Home = (props) => {
     useEffect(() => {
         // const searchDiv = $("#search");
         // searchDiv.css("border", "1px solid red");
-
-        
-
         document
             .getElementById("myForm")
             .addEventListener("submit", async (event) => {
@@ -101,27 +95,16 @@ const Home = (props) => {
 
                 // console.log('searchIndex', searchIndex)
             });
-
-           
-
     }, [name]);
     */
 
     const handleClick = () => {
         setName("guiseppe");
     };
-
-    
-
-    // const handleDelete = (id) => {
-    //     const newBlogs = blogs.filter((blog) => blog.id !== id);
-    //     setBlogs(newBlogs);
-    // };
     
     const [ninjaData, setNinjaData] = useState(null)
     const [ninjaDataLoaded, setNinjaDataLoaded] = useState(false)
     
-
     useEffect(() => {
         axios.get('http://jsonplaceholder.typicode.com/users')
             .then(resp => {
@@ -138,60 +121,20 @@ const Home = (props) => {
                 <meta name="keywords" content="nextjs, netlify, netlifycms" />
             </Head>
             
-            <section
-                style={{
-                    backgroundImage:
-                        "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/freedom.jpg)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    height: "800px",
-                }}
-            ></section>
-
-            {/* {console.log(ninjaData)} */}
-            {/* {ninjaData.map(el => <p key={el.id}>{el.name}</p>)} */} 
+            <img clssName="img-100" src="/img/freedom.jpeg" />
+            {/* <ImagesInNext /> */}
 
             {ninjaDataLoaded &&
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <ul className={styles.test_class}>
+                            <ul className={styles.testclass}>
                                 {ninjaData.map(el => <li key={el.id}>{el.name}</li>)}
                             </ul>
                         </div>
                     </div>
                 </div>
             }
-
-            {/* <section
-                style={{
-                    backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/travel.jpg)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    height: '400px',
-                }}
-            ></section>
-            <section
-                style={{
-                    backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/holidays.jpg)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    height: '400px',
-                }}
-            ></section> */}
-
-            {/* <div>
-                <h1>All Ninjs</h1>
-                {ninjaData.map(ninja => (
-                    <Link key={ninja.id}>
-                        <a>
-                            <h3>{ninja.name}</h3>
-                        </a>
-                    </Link>
-                ))}
-            </div> */}
-
-            
 
             {error && 
                 <div className="container">

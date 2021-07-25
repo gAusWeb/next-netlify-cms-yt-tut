@@ -1,8 +1,19 @@
 // classes-here-wont-class-with-other-page-specific-classes-with-same-name
 // cant use hyphens in these names :/
-.test_class {
+.testclass {
     background-color: hotpink;
     list-style-type: none;
     padding: 20px;
+    margin-top: 30px;
+    
+    li {
+        color: white;
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+}
 
+.img-100 {
+    width:100;
+    height: auto;
 }
