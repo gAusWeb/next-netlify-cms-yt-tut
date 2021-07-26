@@ -1,0 +1,36 @@
+.users {
+    a {
+        &:before {
+            background-color: $primary;
+            position: absolute;
+            display: inline-block;
+            height: 100%;
+            width: 5px;
+            top: 0;
+            left: 0px;
+            content: " ";
+            transition: background-color linear .35s;
+        }
+
+        margin-top: 20px;
+        display: block;
+        position: relative;
+        padding: 10px 20px;
+        background-color: #f8f8f8;
+        transition: background-color linear .15s;
+        box-shadow: 0 1px 3px rgba($color: #000000, $alpha: .05);
+
+        &:hover, &:focus {
+            background-color: $primary;
+            color: $white;
+            
+            &:before {
+                background-color: hotpink;
+            }
+        }
+
+        h5 {
+            margin-bottom: 0;
+        }
+    }
+}

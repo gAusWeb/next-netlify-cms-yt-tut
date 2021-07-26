@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(240, 240, 240);
+
+}
+
+
+.col {
+    > h1 {
+        margin-top: 50px;
+        margin-top: 50px;
+    }
+
+    a {
+        color: $black;
+        text-decoration: underline;
+        transition: color ease-in 0.15s;
+        
+        &:hover {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        &:focus,
+        &:focus-visible {
+            outline: 1px solid $black;
+        }
+    }
+}

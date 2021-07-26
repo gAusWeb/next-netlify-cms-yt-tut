@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { attributes, react as ContactContent } from '../content/contact.md';
 // import Slider from '../components/Slider';
 
@@ -7,7 +8,12 @@ const About = () => {
 
     return (
         <>
-                        {/* <Slider /> */}
+            <Head>
+                <title>GavAusWeb - Contact</title>
+                <meta name="keywords" content="GavAusWeb, contact, nextjs, netlify, netlifycms" />
+            </Head>
+            
+            {/* <Slider /> */}
 
             <div className="container">
                 <div className="row">

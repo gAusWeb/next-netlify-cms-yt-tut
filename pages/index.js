@@ -50,7 +50,9 @@ import styles from '../fed/css/scss/page-specific/home.module.scss'
 const Home = (props) => {
     let { title, date } = attributes;
     const [name, setName] = useState("mario");
-    const {data: blogs, isLoading, error} = useAxios('http://localhost:8000/blogs')
+
+    // blogs
+    // const {data: blogs, isLoading, error} = useAxios('http://localhost:8000/blogs')
     
     // const [searchState, setSearchState] = useState(props.searchState);
     // const [lastRouter, setLastRouter] = useState(props.searchState)
@@ -117,12 +119,21 @@ const Home = (props) => {
     return (
         <>
             <Head>
-                <title>NextJs/Netlify Integration Demo</title>
-                <meta name="keywords" content="nextjs, netlify, netlifycms" />
+                <title>GavAusWeb - Home</title>
+                <meta name="keywords" content="GavAusWeb, home, nextjs, netlify, netlifycms" />
             </Head>
             
-            <img clssName="img-100" src="/img/freedom.jpeg" />
-            {/* <ImagesInNext /> */}
+            {/* <img className="img-100" src="/img/freedom.jpeg" /> */}
+            
+            <section
+                style={{
+                    backgroundImage:
+                        "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/freedom.jpg)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    height: "800px",
+                }}
+            ></section>
 
             {ninjaDataLoaded &&
                 <div className="container">
@@ -136,6 +147,7 @@ const Home = (props) => {
                 </div>
             }
 
+            {/* blogs 
             {error && 
                 <div className="container">
                     <div className="row">
@@ -165,6 +177,8 @@ const Home = (props) => {
                 blogs={blogs.filter((blog) => blog.author === "mario")}
                 title="Mario's Blogs"
             />}
+
+            */}
             
             <div className="container">
                 <div className="row">

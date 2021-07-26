@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { attributes, react as AboutContent } from '../content/about.md';
 
 const About = () => {
@@ -6,6 +7,10 @@ const About = () => {
 
     return (
         <>
+            <Head>
+                <title>GavAusWeb - About</title>
+                <meta name="keywords" content="GavAusWeb, about, nextjs, netlify, netlifycms" />
+            </Head>
 
             <div className="container">
                 <div className="row">
