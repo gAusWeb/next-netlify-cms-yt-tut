@@ -31,5 +31,9 @@ export default {
           },
         ],
       },
+      {
+        name: 'test',
+        label: 'test',
+      }
     ],
   };
