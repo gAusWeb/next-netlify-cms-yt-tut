@@ -34,6 +34,18 @@ export default {
       {
         name: 'test',
         label: 'test',
+        files: [
+          {
+            label: 'Test 1',
+            name: 'Test 1',
+            file: 'content/test/test.md',
+            fields: [
+              {
+                label: 'Hero Title',
+              }
+            ]
+          }
+        ]
       }
     ],
   };
