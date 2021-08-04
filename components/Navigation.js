@@ -16,6 +16,9 @@ export default function Navigation() {
         const triggerMenu = document.querySelector(
             ".page-header .trigger-menu"
         );
+
+        const menuLinksScope = document.querySelector('ul.menu')
+        const menuLinks = menuLinksScope.querySelectorAll('li > a');
         const lottieWrapper = document.querySelector(".lottie-wrapper");
         const scrollUp = "scroll-up";
         const scrollDown = "scroll-down";
@@ -26,6 +29,13 @@ export default function Navigation() {
         triggerMenu.addEventListener("click", () => {
             body.classList.toggle("menu-open");
         });
+
+        menuLinks.forEach(el => {
+            console.log(el);
+            el.addEventListener('click', () => {
+                body.classList.contains("menu-open") ? body.classList.remove("menu-open") : null;
+            })
+        })
 
         lottieWrapper.addEventListener("click", (e) => {
             e.preventDefault();
@@ -55,7 +65,7 @@ export default function Navigation() {
             lastScroll = currentScroll;
         });
 
-    });
+    },[]);
 
     return (
         <>
