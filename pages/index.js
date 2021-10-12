@@ -4,7 +4,10 @@ import { attributes, react as HomeContent } from "../content/home.md";
 import BlogList from "../components/BlogList";
 import useAxios from "../components/useAxios";
 import axios from "axios";
-import styles from '../fed/css/scss/page-specific/home.module.scss'
+import styles from "../fed/css/scss/page-specific/home.module.scss";
+import HeroBanner from "../components/HeroBanner";
+import VideoGrid from "../components/VideoGrid";
+import Search from '../components/search/Search'
 // import ImagesInNext from "../components/NextImages";
 // import Image from 'next/image'
 
@@ -40,12 +43,8 @@ import styles from '../fed/css/scss/page-specific/home.module.scss'
 //     indexName: "instant_search",
 // };
 
-
 // run json-server without DL npm package to project
 // npx json-server --watch data/db.json --port 8000
-
-
-
 
 const Home = (props) => {
     let { title, date } = attributes;
@@ -53,7 +52,7 @@ const Home = (props) => {
 
     // blogs
     // const {data: blogs, isLoading, error} = useAxios('http://localhost:8000/blogs')
-    
+
     // const [searchState, setSearchState] = useState(props.searchState);
     // const [lastRouter, setLastRouter] = useState(props.searchState)
     // console.log(props);
@@ -103,49 +102,55 @@ const Home = (props) => {
     const handleClick = () => {
         setName("guiseppe");
     };
-    
-    const [ninjaData, setNinjaData] = useState(null)
-    const [ninjaDataLoaded, setNinjaDataLoaded] = useState(false)
-    
+
+    const [ninjaData, setNinjaData] = useState(null);
+    const [ninjaDataLoaded, setNinjaDataLoaded] = useState(false);
+
     useEffect(() => {
-        axios.get('http://jsonplaceholder.typicode.com/users')
-            .then(resp => {
-                setNinjaData(resp.data);
-                setNinjaDataLoaded(true)
-            })
-            
-    },[])
+        axios.get("http://jsonplaceholder.typicode.com/users").then((resp) => {
+            setNinjaData(resp.data);
+            setNinjaDataLoaded(true);
+        });
+    }, []);
 
     return (
         <>
             <Head>
                 <title>GavAusWeb - Home</title>
-                <meta name="keywords" content="GavAusWeb, home, nextjs, netlify, netlifycms" />
+                <meta
+                    name="keywords"
+                    content="GavAusWeb, home, nextjs, netlify, netlifycms"
+                />
             </Head>
-            
-            {/* <img className="img-100" src="/img/freedom.jpeg" /> */}
-            
-            <section
-                style={{
-                    backgroundImage:
-                        "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/freedom.jpg)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    height: "800px",
-                }}
-            ></section>
 
-            {ninjaDataLoaded &&
+            <HeroBanner
+                heading="Otherside of the coin"
+                subHeading={["Placeholder text commonly used to ", <a href='#'>demonstrate the visual</a>, " form of a document or a typeface without relying on meaningful content."]}
+            />
+
+            <div className="container">
+                <div className="row">
+                    <div className="col">  
+                        <Search />
+                    </div>
+                </div>
+            </div>
+
+            <VideoGrid />
+ 
+            {/* {ninjaDataLoaded && (
                 <div className="container">
                     <div className="row">
                         <div className="col">
                             <ul className={styles.testclass}>
-                                {ninjaData.map(el => <li key={el.id}>{el.name}</li>)}
+                                {ninjaData.map((el) => (
+                                    <li key={el.id}>{el.name}</li>
+                                ))}
                             </ul>
                         </div>
                     </div>
                 </div>
-            }
+            )} */}
 
             {/* blogs 
             {error && 
@@ -179,7 +184,7 @@ const Home = (props) => {
             />}
 
             */}
-            
+
             <div className="container">
                 <div className="row">
                     <div className="col">
@@ -188,7 +193,12 @@ const Home = (props) => {
                         <br />
                         <br />
 
-                        <button className="btn btn-danger" onClick={handleClick}>Click me</button>
+                        <button
+                            className="btn btn-danger"
+                            onClick={handleClick}
+                        >
+                            Click me
+                        </button>
 
                         <br />
 
@@ -205,7 +215,9 @@ const Home = (props) => {
                                 />
                             </div>
                             <div>
-                                <button className="btn btn-danger">submit</button>
+                                <button className="btn btn-danger">
+                                    submit
+                                </button>
                             </div>
                         </form>
 
