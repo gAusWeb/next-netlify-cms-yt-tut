@@ -74,9 +74,12 @@ body {
     letter-spacing: 0.2em;
     text-decoration: none;
     position: relative;
+    padding-right: 0;
+    outline: 0;
+    box-shadow: none;
 
     &:focus {
-        outline: 0;
+        // outline: 0;
         border: 0;
     }
 
@@ -89,13 +92,14 @@ body {
         bottom: 0;
         height: 1px;
         transition: width .5s ease;
+        right: 0;
     }
     
 }
 
 .menu-open .page-header .trigger-menu {
     &::after {
-        border: 1px solid white;
+        border-bottom: 2px solid white;
         width: 100%;
     }
 }
@@ -122,15 +126,17 @@ body {
     transition: height 0.3s ease;
 
     li {
+        margin-bottom: 30px;
+
         &::after {
             // border-bottom: 1px solid rgb(45, 213, 255);
-            content: " ";
-            display: block;
-            max-width: 150px;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 30px;
+            // content: " ";
+            // display: block;
+            // max-width: 150px;
+            // width: 100%;
+            // margin-left: auto;
+            // margin-right: auto;
+            // margin-top: 30px;
         }
 
         &:last-child {
@@ -155,9 +161,13 @@ body {
     }
 
     &__content-container {
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
+        width: initial;    
+
+        // @media (min-width) {
+        //     max-width: 400px;
+        //     margin-left: auto;
+        //     margin-right: auto;
+        // }
     }
 
     h1 {
@@ -269,8 +279,8 @@ body {
         text-align: left;
         
         @media (min-width:1024px) {
-            padding-top: 150px;
-            text-align: center;
+            padding-top: 130px;
+            text-align: right;
         }
     }
 }
@@ -303,6 +313,7 @@ body {
 
     .trigger-menu-wrapper {
         justify-content: start;
+        
         
         @media (min-width:1024px) {
             justify-content: center;

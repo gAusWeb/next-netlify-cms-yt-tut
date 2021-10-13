@@ -82,33 +82,47 @@ export default function Navigation() {
             <header className="page-header">
                 <nav>
                     <div className="trigger-menu-wrapper">
-                        <button className="trigger-menu">
-                            <svg width="12" height="12" viewBox="0 0 24 24">
-                                <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
-                            </svg>
-                            <span>MENU</span>
-                        </button>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button className="btn trigger-menu">
+                                            <svg
+                                                width="12"
+                                                height="12"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
+                                            </svg>
+                                            <span>MENU</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div className="main-menu">
                         <div className="container">
                             <div className="row">
                                 <div className="col">
-                                    <div className="main-menu__content-container">
-                                        {/* <h1>Main menu</h1> */}
+                                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <div className="main-menu__content-container">
+                                            {/* <h1>Main menu</h1> */}
 
-                                        <ul className="menu">
-                                            <li>
-                                                <Link href="/">
-                                                    <a>Home</a>
-                                                </Link>
-                                                <p>back to homepage</p>
-                                            </li>
-                                            <li>
-                                                <Link href="/about">
-                                                    <a>About</a>
-                                                </Link>
-                                                <p>Learn more about us</p>
-                                                {/* <ul className="sub-menu">
+                                            <ul className="menu">
+                                                <li>
+                                                    <Link href="/">
+                                                        <a>Home</a>
+                                                    </Link>
+                                                    <p>back to homepage</p>
+                                                </li>
+                                                <li>
+                                                    <Link href="/about">
+                                                        <a>About</a>
+                                                    </Link>
+                                                    <p>Learn more about us</p>
+                                                    {/* <ul className="sub-menu">
                                                 <li>
                                                     <a href="">Team</a>
                                                 </li>
@@ -116,46 +130,52 @@ export default function Navigation() {
                                                     <a href="">Clients</a>
                                                 </li>
                                             </ul> */}
-                                            </li>
-                                            <li>
-                                                <Link href="/admin/index.html">
-                                                    <a
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                    >
-                                                        Admin login
-                                                    </a>
-                                                </Link>
-                                                <p>Login to make cms changes</p>
-                                            </li>
-                                            <li>
-                                                <Link href="/videos">
-                                                    <a>Recommended videos</a>
-                                                </Link>
-                                                <p>
-                                                    Pre-rendered api
-                                                    data/dynamic routing #2
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <Link href="/posts">
-                                                    <a>User Data</a>
-                                                </Link>
-                                                <p>
-                                                    Pre-rendered api
-                                                    data/dynamic routing #2
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <Link href="/contact">
-                                                    <a>Contact</a>
-                                                </Link>
-                                                <p>
-                                                    Reach out to our friendly
-                                                    staff
-                                                </p>
-                                            </li>
-                                        </ul>
+                                                </li>
+                                                <li>
+                                                    <Link href="/admin/index.html">
+                                                        <a
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                        >
+                                                            Admin login
+                                                        </a>
+                                                    </Link>
+                                                    <p>
+                                                        Login to make cms
+                                                        changes
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <Link href="/videos">
+                                                        <a>
+                                                            Recommended videos
+                                                        </a>
+                                                    </Link>
+                                                    <p>
+                                                        Pre-rendered api
+                                                        data/dynamic routing #2
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <Link href="/posts">
+                                                        <a>User Data</a>
+                                                    </Link>
+                                                    <p>
+                                                        Pre-rendered api
+                                                        data/dynamic routing #2
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <Link href="/contact">
+                                                        <a>Contact</a>
+                                                    </Link>
+                                                    <p>
+                                                        Reach out to our
+                                                        friendly staff
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
