@@ -5,17 +5,19 @@ import { VideosDataLocal } from '../../data/VideosDataLocal'
 // Only runs at build time, when app is build/rendered, do not put code here intended for dom elements
 
 export const getStaticProps = async () => {
-    const jsonData = 'http://localhost:3004/videos';
-    const res = await fetch(jsonData)
-    const data = await res.json();
+    // const jsonData = 'http://localhost:3004/videos';
+    // const res = await fetch(jsonData)
+    // const data = await res.json();
+    
+    const data = VideosDataLocal;
 
     return {
-        props: { jsonData: data, localData: VideosDataLocal},
+        props: { videos: data }
     };
 };
 
 
-const GeesUsers = (props) => {
+const GeesUsers = ({ videos }) => {
     const router = useRouter();
 
     const handleClick = (e) => {
@@ -23,10 +25,10 @@ const GeesUsers = (props) => {
         router.push(`/`)
     }
 
-    let videos = [];
+    // let videos = [];
 
     // check for json-server, if not use local data
-    props.jsonData.length > 0 ? videos = props.jsonData : videos = props.localData
+    // props.jsonData.length > 0 ? videos = props.jsonData : videos = props.localData
 
 
     return (

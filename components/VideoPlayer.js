@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function VideoPlayer({ videos }) {
-    console.log(videos);
+    // console.log(videos);
     return (
         <div className="col-12">
             <div className="video-player">
@@ -18,12 +18,12 @@ export default function VideoPlayer({ videos }) {
                         className="video-player__video"
                         src={videos.url}
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                        frameborder="0"
+                        frameBorder="0"
                         width="560"
                         height="315"
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
+                        allowFullScreen
                     >
                         <small>
                             BitChute embedding powered by{" "}

@@ -9,9 +9,9 @@ export const getStaticPaths = async () => {
     // const data = await res.json();
     
     const data = VideosDataLocal;
-    console.log('vid-local-videos[id]', VideosDataLocal);
-
+    
     const paths = data.map(videos => {
+        console.log('vid-local-videos[id]', videos.id);
         return {
             params: { id: videos.id.toString() }
         }
@@ -33,7 +33,7 @@ export const getStaticProps = async (context) => {
     
     const initData = VideosDataLocal;
     const data = initData[id];
-
+    console.log('vid-local-videos[data]', data);
     return {
         props: { videos: data },
     };
