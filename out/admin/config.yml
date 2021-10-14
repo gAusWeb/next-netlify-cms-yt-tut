@@ -5,12 +5,6 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
-  - name: "pages2"
-    label: "Pages"
-    files:
-    - label: "Home2å"
-      name: "home"
-      file: "content/home.md"
   - name: "pages"
     label: "Pages"
     create: true
@@ -42,3 +36,25 @@ collections:
         - { label: "Title", name: "title", widget: "string"}
         - { label: "Publish Date", name: "date", widget: "datetime" }
         - { label: "Body", name: "body", widget: "markdown"}
+  - name: "vidoes"
+    label: "Videos"
+    folder: "vidoes"
+    create: true
+    fields:
+        - { label: "Title", name: "title", widget: "string"}
+  - name: "test 2"
+    label: "test 2"
+    create: true
+    widget: list
+    files:
+      - label: "test"
+        name: "test"
+        file: "content/test.md"
+        fields:
+        - { label: "Title", name: "title", widget: "string"}
+    types:
+      - label: 'test 2 2'
+        name: 'test 2 2'
+        widget: list
+        fields: 
+          - { label: Image, name: image, widget: image }

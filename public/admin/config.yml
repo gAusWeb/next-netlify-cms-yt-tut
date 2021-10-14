@@ -38,12 +38,10 @@ collections:
         - { label: "Body", name: "body", widget: "markdown"}
   - name: "vidoes"
     label: "Videos"
+    folder: "vidoes"
     create: true
-    files:
-    - label: "Bronski - Small Town Boy (12'' release)"
-      name: "bronski-small-town-boy-12-once-release"
-      file: "content/videos/video1.md"
-      fields:
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
         - { label: "Title", name: "title", widget: "string"}
   - name: "test 2"
     label: "test 2"
