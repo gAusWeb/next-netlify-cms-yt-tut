@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 const SearchForm = ({searchQuery, setSearchQuery , handleSearchFormSubmit}) => {
-    console.log('searchQuery', searchQuery);
+    // console.log('searchQuery: =>', searchQuery);
     return (
         <form id="search" onSubmit={handleSearchFormSubmit}>
             <div>

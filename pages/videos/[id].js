@@ -1,11 +1,16 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import VideoPlayer from '../../components/VideoPlayer';
+// import VideosDataLocal from '../../data/VideosDataLocal';
+import { VideosDataLocal } from '../../data/VideosDataLocal';
 
 export const getStaticPaths = async () => {
-    const res = await fetch('http://localhost:3004/videos');
-    const data = await res.json();
-    console.log('data', data);
+    // const res = await fetch('http://localhost:3004/videos');
+    // const data = await res.json();
+    
+    const data = VideosDataLocal;
+    console.log('vid-local-videos[id]', VideosDataLocal);
+
     const paths = data.map(videos => {
         return {
             params: { id: videos.id.toString() }
@@ -22,10 +27,12 @@ export const getStaticPaths = async () => {
 // this will loop through every matching param (above), to generate the data for each page
 // context is a built in object
 export const getStaticProps = async (context) => {
-    const id = context.params.id
-    const res = await fetch(`http://localhost:3004/videos/${id}`);
-    const data = await res.json();
+    const id = context.params.id - 1;
+    // const res = await fetch(`http://localhost:3004/videos/${id}`);
+    // const data = await res.json();
     
+    const initData = VideosDataLocal;
+    const data = initData[id];
 
     return {
         props: { videos: data },
@@ -39,6 +46,8 @@ const Details = ({ videos }) => {
         e.preventDefault()
         router.push(`/videos/`)
     }
+
+
 
     return (
         <>
