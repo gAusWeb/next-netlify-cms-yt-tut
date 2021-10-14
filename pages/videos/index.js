@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { VideosDataLocal } from '../../data/VideosDataLocal'
+import { attributes, react as Video1 } from "../../content/videos/2021-10-14-video-test-1.md";
 
 // Only runs at build time, when app is build/rendered, do not put code here intended for dom elements
 
@@ -37,6 +38,7 @@ const GeesUsers = ({ videos }) => {
                 <div className="row">
                     <div className="col">
                         <h1>geeAusWeb Usernames</h1>
+                        sdfds<Video1 />
                         {/* {users} */}
                         <p><Link href="/"><a onClick={handleClick}><strong>{`< Home`}</strong></a></Link></p>
                     </div>
