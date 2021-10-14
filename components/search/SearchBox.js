@@ -7,6 +7,7 @@ const SearchBox = () => {
     const [ searchQuery, setSearchQuery ] = useState('');
 
     const handleSearchFormSubmit = ({searchQuery, setSearchQuery , handleSearchFormSubmit}) => {
+        console.log(searchQuery);
         return null;
     }
 

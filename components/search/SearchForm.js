@@ -12,7 +12,7 @@ const SearchForm = ({searchQuery, setSearchQuery , handleSearchFormSubmit}) => {
                     placeholder="Search.."
                     value={searchQuery}
                     onChange={(event => setSearchQuery(event.target.value))}
-                    
+                    id="search"
                 />
             </div>
         </form>
