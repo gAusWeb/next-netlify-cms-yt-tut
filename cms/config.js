@@ -36,16 +36,23 @@ export default {
         label: 'test',
         files: [
           {
-            label: 'Test 1',
-            name: 'Test 1',
+            label: 'test',
+            name: 'test',
             file: 'content/test/test.md',
             fields: [
               {
-                label: 'Hero Title',
-              }
-            ]
-          }
-        ]
-      }
+                label: 'Test Title',
+                name: 'test_title',
+                widget: 'string',
+              },
+              {
+                label: 'test Description',
+                name: 'test_description',
+                widget: 'markdown',
+              },
+            ],
+          },
+        ],
+      },
     ],
   };

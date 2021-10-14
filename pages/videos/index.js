@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import {VideosDataLocal} from '../../data/VideosDataLocal'
+import { VideosDataLocal } from '../../data/VideosDataLocal'
 
 // Only runs at build time, when app is build/rendered, do not put code here intended for dom elements
 
 export const getStaticProps = async () => {
-    const jsonData = 'http://localhost:3004/videoss';
+    const jsonData = 'http://localhost:3004/videos';
     const res = await fetch(jsonData)
     const data = await res.json();
 
@@ -24,6 +24,7 @@ const GeesUsers = (props) => {
     }
 
     let videos = [];
+
     // check for json-server, if not use local data
     props.jsonData.length > 0 ? videos = props.jsonData : videos = props.localData
 

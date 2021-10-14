@@ -13,6 +13,7 @@ collections:
       file: "content/home.md"
   - name: "pages"
     label: "Pages"
+    create: true
     files:
     - label: "Home"
       name: "home"
