@@ -38,11 +38,12 @@ collections:
         - { label: "Body", name: "body", widget: "markdown"}
   - name: "vidoes"
     label: "Videos"
-    folder: "vidoes"
+    folder: "content/vidoes"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
         - { label: "Title", name: "title", widget: "string"}
+        - { label: "Date", name: "date", widget: "date", default: "" }
   - name: "test 2"
     label: "test 2"
     create: true
