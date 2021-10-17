@@ -20,14 +20,19 @@ collections:
           fields:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
-  - name: "vidoes"
+  - name: "videos"
     label: "Videos"
     folder: "content/vidoes"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-        - { label: "Title", name: "title", widget: "string"}
+        - { label: "Video title", name: "title", widget: "string"}
         - { label: "Date", name: "date", widget: "date", default: "" }
+        - { label: "Video description", name: "videoDesc", widget: "string", default: "" }
+        - { label: "Video URL", name: "videoUrl", widget: "string"}
+        - { label: "Video Upload Date", name: "videoDate", widget: "date", default: "" }
+        - { label: "Video image", name: "videoImage", widget: "image" }
+        - { label: "Video ID", name: "id", widget: "string"}
   - name: "test 2"
     label: "test 2"
     create: true

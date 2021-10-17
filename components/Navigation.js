@@ -34,7 +34,6 @@ export default function Navigation() {
         });
 
         menuLinks.forEach((el) => {
-            console.log(el);
             el.addEventListener("click", () => {
                 body.classList.contains("menu-open")
                     ? body.classList.remove("menu-open")

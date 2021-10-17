@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function VideoPlayer({ videos }) {
-    // console.log(videos);
     return (
         <div className="col-12">
             <div className="video-player">

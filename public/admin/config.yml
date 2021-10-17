@@ -27,11 +27,12 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
         - { label: "Video title", name: "title", widget: "string"}
+        - { label: "Date", name: "date", widget: "date", default: "" }
         - { label: "Video description", name: "videoDesc", widget: "string", default: "" }
         - { label: "Video URL", name: "videoUrl", widget: "string"}
         - { label: "Video Upload Date", name: "videoDate", widget: "date", default: "" }
         - { label: "Video image", name: "videoImage", widget: "image" }
-        - { label: "Video ID", name: "videoId", widget: "string"}
+        - { label: "Video ID", name: "id", widget: "string"}
   - name: "test 2"
     label: "test 2"
     create: true
