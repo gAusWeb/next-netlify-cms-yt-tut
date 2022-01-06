@@ -47,7 +47,15 @@ export const getStaticProps = async ({ params }) => {
     // const res = await fetch(`http://localhost:3004/videos/${id}`);
     // const data = await res.json();
 
-    const posts = getPostBySlug(slug, ["title", "slug"]);
+    const posts = getPostBySlug(slug, [
+        "title",
+        "slug",
+        "id",
+        "videoTitle",
+        "videoDesc",
+        "videoUrl",
+        "videoImage",
+    ]);
 
     return {
         props: { videos: posts },

@@ -1,12 +1,13 @@
 import React from "react";
 
 export default function VideoPlayer({ videos }) {
+    console.log("videos", videos);
     return (
         <div className="col-12">
             <div className="video-player">
                 <div className="video-player__video-details">
                     <div className="video-player__video-title">
-                        <h3>{videos.title}</h3>
+                        <h3>{videos.videoTitle}</h3>
                     </div>
                 </div>
 
@@ -15,7 +16,7 @@ export default function VideoPlayer({ videos }) {
                 <div className="video-player__container">
                     <iframe
                         className="video-player__video"
-                        src={videos.url}
+                        src={videos.videoUrl}
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                         frameBorder="0"
                         width="560"
@@ -35,7 +36,7 @@ export default function VideoPlayer({ videos }) {
 
                 <div className="video-player__video-details">
                     <div className="video-player__video-desc">
-                        <p>{videos.desc}</p>
+                        <p>{videos.videoDesc}</p>
                     </div>
                 </div>
             </div>
