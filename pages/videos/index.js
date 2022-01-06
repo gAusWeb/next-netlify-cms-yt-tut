@@ -34,7 +34,7 @@ const GeesUsers = ({ videos }) => {
         router.push(`/`);
     };
 
-    console.log("realSlug =>", videos);
+    // console.log("realSlug =>", videos);
 
     return (
         <div className="users">
