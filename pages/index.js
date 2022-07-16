@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { attributes, react as HomeContent } from "../content/home.md";
 import BlogList from "../components/BlogList";
 import useAxios from "../components/useAxios";
@@ -7,7 +7,7 @@ import axios from "axios";
 import styles from "../fed/css/scss/page-specific/home.module.scss";
 import HeroBanner from "../components/HeroBanner";
 import VideoGrid from "../components/VideoGrid";
-import Search from '../components/search/Search'
+import Search from "../components/search/Search";
 // import ImagesInNext from "../components/NextImages";
 // import Image from 'next/image'
 
@@ -50,6 +50,14 @@ const Home = (props) => {
     let { title, date } = attributes;
     const [name, setName] = useState("mario");
 
+    const [input, setInput] = useState("");
+    const count = useRef(1);
+    const inputRef = useRef();
+
+    const inputRefClickHandler = () => {
+        console.log(inputRef.current);
+    };
+
     // blogs
     // const {data: blogs, isLoading, error} = useAxios('http://localhost:8000/blogs')
 
@@ -63,6 +71,9 @@ const Home = (props) => {
 
     /*
     useEffect(() => {
+       
+    
+    
         // const searchDiv = $("#search");
         // searchDiv.css("border", "1px solid red");
         document
@@ -111,6 +122,8 @@ const Home = (props) => {
             setNinjaData(resp.data);
             setNinjaDataLoaded(true);
         });
+
+        count.current += 1;
     }, []);
 
     return (
@@ -125,19 +138,23 @@ const Home = (props) => {
 
             <HeroBanner
                 heading="Otherside of the coin"
-                subHeading={["Placeholder text commonly used to ", <a href='#'>demonstrate the visual</a>, " form of a document or a typeface without relying on meaningful content."]}
+                subHeading={[
+                    "Placeholder text commonly used to ",
+                    <a href="#">demonstrate the visual</a>,
+                    " form of a document or a typeface without relying on meaningful content.",
+                ]}
             />
 
             <div className="container">
                 <div className="row">
-                    <div className="col">  
+                    <div className="col">
                         <Search />
                     </div>
                 </div>
             </div>
 
             <VideoGrid />
- 
+
             {/* {ninjaDataLoaded && (
                 <div className="container">
                     <div className="row">
@@ -188,6 +205,18 @@ const Home = (props) => {
             <div className="container">
                 <div className="row">
                     <div className="col">
+                        <input
+                            ref={inputRef}
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                        />
+
+                        <br />
+
+                        <p>You have entered: {input}</p>
+                        <p>Render amount: {count.current}</p>
+                        <br />
                         <br />
 
                         <br />
