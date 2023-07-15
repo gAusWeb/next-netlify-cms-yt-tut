@@ -3,7 +3,7 @@ title: Bronski Beat - Smalltown Boy (Official Video)
 date: 2021-10-13T13:00:00.000Z
 videoTitle: Bronski - Small Town Boy (12" release)
 videoDesc: Cool song
-videoUrl: https://www.youtube.com/embed/88sARuFu-tc
+videoUrl: https://www.youtube.com/embed/88sARuFu-tc?autoplay=1&loop=1&playlist=88sARuFu-tc&modestbranding=1&playsinline=0
 videoDate: 2021-10-14T06:10:00.777Z
 videoImage: https://via.placeholder.com/253x100
 id: "1"

@@ -7,7 +7,7 @@ import axios from "axios";
 import styles from "../fed/css/scss/page-specific/home.module.scss";
 import HeroBanner from "../components/HeroBanner";
 import VideoGrid from "../components/VideoGrid";
-import Search from '../components/search/Search'
+import Search from "../components/search/Search";
 // import ImagesInNext from "../components/NextImages";
 // import Image from 'next/image'
 
@@ -125,19 +125,23 @@ const Home = (props) => {
 
             <HeroBanner
                 heading="Otherside of the coin"
-                subHeading={["Placeholder text commonly used to ", <a href='#'>demonstrate the visual</a>, " form of a document or a typeface without relying on meaningful content."]}
+                subHeading={[
+                    "Placeholder text commonly used to ",
+                    <a href="#">demonstrate the visual</a>,
+                    " form of a document or a typeface without relying on meaningful content.",
+                ]}
             />
 
             <div className="container">
                 <div className="row">
-                    <div className="col">  
+                    <div className="col-12">
                         <Search />
                     </div>
                 </div>
             </div>
 
             <VideoGrid />
- 
+
             {/* {ninjaDataLoaded && (
                 <div className="container">
                     <div className="row">
