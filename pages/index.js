@@ -144,34 +144,7 @@ const Home = (props) => {
           type="text/javascript"
           src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
         ></script>
-        {/* <script>
-          {algoliasearchNetlify({
-            appId: "X8DAUHIWID",
-            apiKey: "085996a065a42fd1536f9965ae073f65",
-            siteId: "90bd238e-0db3-4b5c-8a3c-bddf662dd1a0",
-            branch: "main",
-            selector: "#search",
-          })}
-          ;
-        </script> */}
       </Head>
-
-      {/* <script>console.log(test);</script> */}
-      <script>
-        {/* const quetee = 'qt'; console.log(quetee);
-        var newTest = {
-            appId: "X8DAUHIWID",
-            apiKey: "085996a065a42fd1536f9965ae073f65",
-            siteId: "90bd238e-0db3-4b5c-8a3c-bddf662dd1a0",
-            branch: "main",
-            selector: "div#search",
-          }; */}
-        {/* console.log(test); */}
-        {/* algoliasearchNetlify(test); */}
-        {/* algoliasearchNetlify(
-            newTest
-          );  */}
-      </script>
 
       <HeroBanner
         heading="Otherside of the coin"
@@ -189,13 +162,6 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-      {/* <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <Search />
-          </div>
-        </div>
-      </div> */}
 
       <VideoGrid />
 
