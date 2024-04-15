@@ -122,7 +122,7 @@ const Home = (props) => {
         apiKey: "085996a065a42fd1536f9965ae073f65",
         siteId: "90bd238e-0db3-4b5c-8a3c-bddf662dd1a0",
         branch: "main",
-        selector: "#search",
+        selector: "input#search",
       })}
       ;
     </script>;
