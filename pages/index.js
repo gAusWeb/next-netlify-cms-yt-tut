@@ -47,21 +47,21 @@ import Search from "../components/search/Search";
 // npx json-server --watch data/db.json --port 8000
 
 const Home = (props) => {
-    let { title, date } = attributes;
-    const [name, setName] = useState("mario");
+  let { title, date } = attributes;
+  const [name, setName] = useState("mario");
 
-    // blogs
-    // const {data: blogs, isLoading, error} = useAxios('http://localhost:8000/blogs')
+  // blogs
+  // const {data: blogs, isLoading, error} = useAxios('http://localhost:8000/blogs')
 
-    // const [searchState, setSearchState] = useState(props.searchState);
-    // const [lastRouter, setLastRouter] = useState(props.searchState)
-    // console.log(props);
-    // const fetchData = async () => {
-    //     const results = await axios.get(`/.netlify/functions/mySearchFunction`);
-    //     console.log(results);
-    // }
+  // const [searchState, setSearchState] = useState(props.searchState);
+  // const [lastRouter, setLastRouter] = useState(props.searchState)
+  // console.log(props);
+  // const fetchData = async () => {
+  //     const results = await axios.get(`/.netlify/functions/mySearchFunction`);
+  //     console.log(results);
+  // }
 
-    /*
+  /*
     useEffect(() => {
         // const searchDiv = $("#search");
         // searchDiv.css("border", "1px solid red");
@@ -99,50 +99,62 @@ const Home = (props) => {
     }, [name]);
     */
 
-    const handleClick = () => {
-        setName("guiseppe");
-    };
+  const handleClick = () => {
+    setName("guiseppe");
+  };
 
-    const [ninjaData, setNinjaData] = useState(null);
-    const [ninjaDataLoaded, setNinjaDataLoaded] = useState(false);
+  const [ninjaData, setNinjaData] = useState(null);
+  const [ninjaDataLoaded, setNinjaDataLoaded] = useState(false);
 
-    useEffect(() => {
-        axios.get("http://jsonplaceholder.typicode.com/users").then((resp) => {
-            setNinjaData(resp.data);
-            setNinjaDataLoaded(true);
-        });
-    }, []);
+  useEffect(() => {
+    axios.get("http://jsonplaceholder.typicode.com/users").then((resp) => {
+      setNinjaData(resp.data);
+      setNinjaDataLoaded(true);
+    });
+  }, []);
 
-    return (
-        <>
-            <Head>
+  return (
+    <>
+      {/* <Head>
                 <title>GavAusWeb - Home</title>
                 <meta
                     name="keywords"
                     content="GavAusWeb, home, nextjs, netlify, netlifycms"
                 />
-            </Head>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+                <script type="text/javascript">
+                    algoliasearchNetlify({
+                        appId: '<YOUR_ALGOLIA_APP_ID>',
+                        apiKey: '<YOUR_ALGOLIA_API_KEY>',
+                        siteId: '<YOUR_NETLIFY_SITE_ID>',
+                        branch: '<YOUR_TARGET_GIT_BRANCH>',
+                        selector: 'div#search',
+                    });
+                </script>
 
-            <HeroBanner
-                heading="Otherside of the coin"
-                subHeading={[
-                    "Placeholder text commonly used to ",
-                    <a href="#">demonstrate the visual</a>,
-                    " form of a document or a typeface without relying on meaningful content.",
-                ]}
-            />
+            </Head> */}
 
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <Search />
-                    </div>
-                </div>
-            </div>
+      <HeroBanner
+        heading="Otherside of the coin"
+        subHeading={[
+          "Placeholder text commonly used to ",
+          <a href="#">demonstrate the visual</a>,
+          " form of a document or a typeface without relying on meaningful content.",
+        ]}
+      />
 
-            <VideoGrid />
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <Search />
+          </div>
+        </div>
+      </div>
 
-            {/* {ninjaDataLoaded && (
+      <VideoGrid />
+
+      {/* {ninjaDataLoaded && (
                 <div className="container">
                     <div className="row">
                         <div className="col">
@@ -156,7 +168,7 @@ const Home = (props) => {
                 </div>
             )} */}
 
-            {/* blogs 
+      {/* blogs 
             {error && 
                 <div className="container">
                     <div className="row">
@@ -189,58 +201,53 @@ const Home = (props) => {
 
             */}
 
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <br />
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <br />
 
-                        <br />
-                        <br />
+            <br />
+            <br />
 
-                        <button
-                            className="btn btn-danger"
-                            onClick={handleClick}
-                        >
-                            Click me
-                        </button>
+            <button className="btn btn-danger" onClick={handleClick}>
+              Click me
+            </button>
 
-                        <br />
+            <br />
 
-                        <p>{name}</p>
+            <p>{name}</p>
 
-                        <br />
+            <br />
 
-                        <form id="myForm">
-                            <div className="search-wrap">
-                                <input
-                                    className="form-control search-input"
-                                    name="searchText"
-                                    placeholder="Search for tech articles (eg. Animal crossing)"
-                                />
-                            </div>
-                            <div>
-                                <button className="btn btn-danger">
-                                    submit
-                                </button>
-                            </div>
-                        </form>
+            <form id="myForm">
+              <div className="search-wrap">
+                <input
+                  className="form-control search-input"
+                  name="searchText"
+                  placeholder="Search for tech articles (eg. Animal crossing)"
+                />
+              </div>
+              <div>
+                <button className="btn btn-danger">submit</button>
+              </div>
+            </form>
 
-                        <br />
+            <br />
 
-                        <div id="result"></div>
+            <div id="result"></div>
 
-                        <br />
+            <br />
 
-                        <h1>{title}</h1>
-                        <span>{date}</span>
-                        <hr />
-                        {/* <DynamicComponentWithNoSSR /> */}
-                        <HomeContent />
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+            <h1>{title}</h1>
+            <span>{date}</span>
+            <hr />
+            {/* <DynamicComponentWithNoSSR /> */}
+            <HomeContent />
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Home;
