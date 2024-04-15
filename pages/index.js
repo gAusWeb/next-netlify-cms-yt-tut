@@ -8,6 +8,8 @@ import styles from "../fed/css/scss/page-specific/home.module.scss";
 import HeroBanner from "../components/HeroBanner";
 import VideoGrid from "../components/VideoGrid";
 import Search from "../components/search/Search";
+import Script from "next/script";
+
 // import ImagesInNext from "../components/NextImages";
 // import Image from 'next/image'
 
@@ -113,27 +115,63 @@ const Home = (props) => {
     });
   }, []);
 
+  useEffect(() => {
+    <script>
+      {algoliasearchNetlify({
+        appId: "X8DAUHIWID",
+        apiKey: "085996a065a42fd1536f9965ae073f65",
+        siteId: "90bd238e-0db3-4b5c-8a3c-bddf662dd1a0",
+        branch: "main",
+        selector: "#search",
+      })}
+      ;
+    </script>;
+  }, []);
+
   return (
     <>
-      {/* <Head>
-                <title>GavAusWeb - Home</title>
-                <meta
-                    name="keywords"
-                    content="GavAusWeb, home, nextjs, netlify, netlifycms"
-                />
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
-                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
-                <script type="text/javascript">
-                    algoliasearchNetlify({
-                        appId: '<YOUR_ALGOLIA_APP_ID>',
-                        apiKey: '<YOUR_ALGOLIA_API_KEY>',
-                        siteId: '<YOUR_NETLIFY_SITE_ID>',
-                        branch: '<YOUR_TARGET_GIT_BRANCH>',
-                        selector: 'div#search',
-                    });
-                </script>
+      <Head>
+        <title>GavAusWeb - Home</title>
+        <meta
+          name="keywords"
+          content="GavAusWeb, home, nextjs, netlify, netlifycms"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+        />
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
+        ></script>
+        {/* <script>
+          {algoliasearchNetlify({
+            appId: "X8DAUHIWID",
+            apiKey: "085996a065a42fd1536f9965ae073f65",
+            siteId: "90bd238e-0db3-4b5c-8a3c-bddf662dd1a0",
+            branch: "main",
+            selector: "#search",
+          })}
+          ;
+        </script> */}
+      </Head>
 
-            </Head> */}
+      {/* <script>console.log(test);</script> */}
+      <script>
+        {/* const quetee = 'qt'; console.log(quetee);
+        var newTest = {
+            appId: "X8DAUHIWID",
+            apiKey: "085996a065a42fd1536f9965ae073f65",
+            siteId: "90bd238e-0db3-4b5c-8a3c-bddf662dd1a0",
+            branch: "main",
+            selector: "div#search",
+          }; */}
+        {/* console.log(test); */}
+        {/* algoliasearchNetlify(test); */}
+        {/* algoliasearchNetlify(
+            newTest
+          );  */}
+      </script>
 
       <HeroBanner
         heading="Otherside of the coin"
